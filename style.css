@@ -1,0 +1,1123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap');
+
+:root{
+    --main-color:#00eeff;
+    --text-color-white:#ffffff;
+    --text-color-black:#000000;
+    --bg-color-01:#dfdfdf;
+    --color-00:#0000001a;
+
+    --color-02:#009539;
+    --color-03:#471b96;
+    --color-04:#c0c0c0;
+    --color-05:#232323;
+    --color-06:#004ea2;
+    --color-07:#666;
+    --color-08:#060;
+    --color-09:#6600ff;
+    --color-10:#3333ff;
+    --color-11:#212d80;
+}
+
+*{
+    margin: 0; /* Remove todas as margens externas padrão dos elementos */
+    padding: 0; /* Remove todos os preenchimentos internos padrão dos elementos */
+    box-sizing: border-box; /* Define o modelo de caixa para incluir bordas e preenchimentos dentro da largura/altura */
+    text-decoration: none;/* Remove sublinhados ou outros estilos decorativos padrão dos textos (como em links) */
+    border: none; /* Remove bordas padrão de elementos como botões ou campos de entrada */
+    scroll-behavior: smooth; /* Torna o comportamento de rolagem mais suave, ideal para âncoras e navegações */
+}
+
+/* Estilos globais */
+html {
+    font-family: 'Poppins', sans-serif; /* Define a fonte principal do documento */
+    font-size: 16px; /* Define o tamanho base da fonte */
+}
+
+body {
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center; 
+
+    color: var(--text-color-white); /* Cor do texto principal */
+}
+/* /Estilos globais */
+
+/* btn */
+.btn a{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: bold;
+    color: var(--text-color-black);
+    background: transparent;
+    border: 3px solid var(--color-04);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;    
+    margin-top: 30px;
+}
+
+.btn:hover a{
+    border: 3px solid var(--color-07);
+}
+/* /btn */
+
+/* Header */
+header {
+    position: fixed; /* Mantém o cabeçalho fixo no topo da página */
+    width: 100%; /* O cabeçalho ocupa toda a largura */
+    height: 66px; /* Altura do cabeçalho */
+    z-index: 600; /* Garante que o cabeçalho fique acima de outros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+header .top-bar {
+    display: flex; /* Exibe a barra superior como um bloco */
+    background: var(--text-color-black); /* Cor de fundo da barra superior */
+    min-width: 290px; /* Largura mínima da barra */
+    min-height: 66px; /* Altura mínima da barra */
+    position: absolute; /* Posiciona a barra em relação ao cabeçalho */
+    margin: 20px 0 0 80px; /* Espaçamento interno da barra */
+    justify-content: space-between;
+}
+
+header .logo {
+    float: left; /* Posiciona o logo à esquerda */
+    margin: 10px 10px 20px 45px; /* Margem ao redor do logo */
+    position: absolute; /* Posiciona o logo em relação ao cabeçalho */
+    font-size: 2rem; /* Tamanho da fonte do logo */
+    z-index: 10;
+}
+
+header .logo a {
+    display: block; /* Torna o link do logo um bloco clicável */
+    margin: 0; /* Remove margem adicional */
+    padding: 0; /* Remove preenchimento adicional */
+    border: none; /* Remove borda padrão */
+    color: var(--text-color-white); /* Cor do texto do link do logo */
+    text-shadow: none; /* Remove sombra do texto */
+}
+
+.nav-header {
+    display: none; /* Esconde o menu inicialmente */
+    flex-direction: column; /* Organiza os links verticalmente */
+    position: absolute; /* Permite posicionar o menu sobre a página */
+    top: 60px; /* Posiciona o menu logo abaixo do cabeçalho */
+    left: 20px; /* Alinha o menu à direita */
+    background-color: #444; /* Fundo escuro do menu */
+    border-radius: 5px; /* Bordas arredondadas para o menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+    padding: 1rem; /* Espaçamento interno do menu */
+    z-index: 20; /* Garante que o menu fique sobre outros elementos */
+}
+
+.nav-header a {
+    margin: .5rem 0; /* Espaçamento vertical entre os links */
+    color: var(--text-color-white); /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 1rem; /* Tamanho da fonte dos links */
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-header a:hover {
+    background: var(--color-07);
+}
+
+.hamburger {
+    float: left;
+    display: block; /* Exibe o botão hambúrguer */
+    width: 40px;
+    height: 40px;
+    position: relative;
+    font-size: 2rem; /* Tamanho do ícone do botão */
+    background: none; /* Remove o fundo padrão */
+    border: none; /* Remove as bordas padrão */
+    color: var(--main-color); /* Cor do botão */
+    cursor: pointer; /* Altera o cursor para indicar interatividade */
+    margin-top: 10px;
+}
+
+.nav-header.active {
+    display: flex; /* Exibe o menu */
+}
+
+.nav-header a:focus-visible,
+.hamburger:focus-visible {
+    outline: 2px solid var(--main-color);
+}
+/* /Header */
+
+/* Home */
+.home{
+    background: #151515 url(img/data.jpg) no-repeat center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5vw;
+}
+
+.home-content{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+.home-content h4{
+    color: var(--bg-color-01);
+    font-size: clamp(1.8rem, 4vw, 2rem); /* Ajusta dinamicamente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 5px;
+    text-transform: uppercase; /* Deixa o texto em maiúsculas (opcional) */
+}
+
+.home-content h1{
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: bold;
+}
+
+.home-content p{
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    margin: 10px 0;
+}
+
+.home-content span{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--bg-color-01);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.home .btn a{
+    color: var(--text-color-white);
+    transition: background-color 0.3s ease, color 0.3s ease;
+} 
+
+.home .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espaçamento entre os ícones */
+}
+
+.home .social-media i{
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
+    margin: 3rem 1rem ;
+    color: var(--bg-color-01);
+    transition: 0.3s ease;
+}
+
+.home .social-media i:hover{
+    background-color: inherit;
+    color: var(--color-07);
+    cursor: pointer;
+}
+/* /Home */
+
+/* About */
+.about{
+    width: 100%;
+    height: auto;
+    color: var(--text-color-black);
+    background: var(--text-color-white);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.about-photo img{
+    width: 250px;
+    border-radius: 50%;
+    margin: 0px 20px 300px 150px;
+}
+
+.box-about{
+    margin: 40px;
+}
+
+.box-about h2{
+    font-weight: 700;
+    font-size: 2.7rem;
+    color: var(--color-11);
+}
+
+.box-about h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--color-11);
+}
+
+.box-about h4{
+    margin-top: 1.5rem;
+    text-align: justify;
+}
+
+.box-about h4 a{
+    color: var(--color-10);
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 20px;
+}
+
+.section-subtitle .btn a{
+    display: inline-block;
+}
+
+.stacks-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.stacks-content h3{
+    color: var(--color-11);
+    font-size: 1.7rem;    
+}
+
+.tech-list{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.stacks ul li{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.stacks ul li img{
+    width: 60px;
+    height: auto;
+    transition: transform .3s ease;
+}
+
+.stacks ul li img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.stacks ul li div:hover::after {
+    content: attr(data-tootip);
+    position: absolute;
+    top: 95%; /* Posiciona acima do elemento */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centralização */
+    
+    background-color: var(--color-05); /* Fundo do tooltip */
+    color: var(--text-color-white); /* Cor do texto */
+    padding: 10px 14px; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: .9rem; /* Tamanho do texto */
+    white-space: nowrap; /* Evita quebra de linha */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Esconde visualmente */
+    transition: opacity 0.3s ease; /* Transição suave */
+}
+
+.stacks ul li div:hover::before {
+    content: "";
+    position: absolute;
+    bottom: 110%; /* Posiciona próximo ao tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--color-05) transparent transparent transparent; /* Triângulo */
+    z-index: 9; /* Fica atrás do tooltip */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.stacks ul li div:hover::after,
+.stacks ul li div:hover::before {
+    opacity: 1; /* Mostra tooltip ao hover */
+    visibility: visible;
+}
+/* /About */
+
+/* summary */
+.summary {
+    padding: 40px 0;
+    background: #f9f9f9;
+    color: var(--text-color-black);
+}
+
+.box-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.box-content h4 {
+    color: var(--color-10);
+    font-size: 1.5rem;
+}
+
+.box-content h2 {
+    font-size: 32px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.work-container, .education-container, .course-container, .tech-container, .skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.work-box, .education-box, .course-box, .tech-box, .skill-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+.work-timeline, .education-timeline, .course-timeline, .tech-timeline, .skill-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.work-timeline::before, .education-timeline::before, .course-timeline::before, .tech-timeline::before, .skill-timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-10);
+}
+
+.work-icon, .education-icon, .course-icon, .tech-icon, .skill-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--color-10);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.work-date, .education-date, .course-date, .tech-date, .skill-date {
+    margin-bottom: 20px;
+}
+
+.work-date h3, .education-date h3, .course-date h3, .tech-date h3, .skill-date h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.work-date p, .education-date p, .course-date p, .tech-date p, .skill-date p {
+    font-size: 16px;
+    color: #666;
+}
+
+.work-content, .education-content, .course-content, .tech-content, .skill-content {
+    margin-bottom: 20px;
+}
+
+.work-content h4, .education-content h4, .course-content h4, .tech-content h4, .skill-content h4 {
+    font-size: 18px;
+    color: var(--color-10);
+    margin-bottom: 10px;
+}
+
+.work-content p, .education-content p, .course-content p, .tech-content p, .skill-content p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+/* /summary */
+
+/* Portfolio */
+.project{
+    background-color: var(--text-color-white);
+    padding: 2rem; /* Adiciona espaçamento interno */
+    color: var(--text-color-black);
+}
+
+.project h2{
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.project span{
+    color: var(--color-10);
+}
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fotos lado a lado, adaptando-se ao tamanho da tela */
+    gap: 1.2rem;
+}
+
+.project-box{
+    position: relative;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem var(--bg-color-01);
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+    display: flex;
+}
+
+.project-box:hover {
+    transform: scale(1.05); /* Destaca a foto ao passar o mouse */
+    
+}
+
+.project-box img{
+    width: 100%;
+    transition: 0.5s ease;
+    object-fit: cover; /* Ajusta a imagem ao contêiner sem distorcer */
+}
+
+.project-box img:hover{
+    transform: scale(1.1);
+}
+
+.project-box .project-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(129, 140, 248, 0.7);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+    opacity: 0;
+    transform: translateY(18rem);
+    transition: 0.5s ease;
+    color:var(--text-color-white);
+}
+
+.project-box, .project-layer:hover{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-layer h4{
+    font-size: 1.8rem;
+    margin-top: 7rem;
+    color: #1E3A8A;
+}
+
+.project-layer a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    margin-top: 3rem;
+}
+
+.project-layer p{
+    /* margin: 0.2rem 0 0 0.5rem; */
+    margin-top: 30px;
+}
+
+.project-layer a i{
+    color: var(--color-10);
+    
+}
+
+.project-layer a span{
+    color: var(--text-color-black);
+    margin-top: .4rem;
+}
+/* /Portfolio */
+
+/* Services */
+.services{
+    background: #f9f9f9;
+    color: var(--text-color-black);
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+.services h2{
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    color: var(--color-10);
+}
+
+.services h4{
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--text-color-black);
+    margin-bottom: 20px;
+}
+
+.requisit{
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--text-color-black);
+    
+}
+
+.services-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    gap: 1rem;
+}
+
+.services-container, .services-box{
+    padding: 2rem 1rem 2.5rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: solid 0.15rem var(--color-00);
+    background-color: var(--bg-color-02);
+    transition: 0.5s ease;
+}
+
+.services-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 25rem;
+    margin-bottom: 1rem;
+    width: 100%; /* Garante que as caixas ocupem toda a largura disponível */
+}
+
+.services-container, .services-box:hover{
+    border-color: var(--color-07);
+    transform: scale(1.01);
+}
+
+.services-box i{
+    font-size: 4.3rem;
+    color: var(--color-10);    
+}
+
+.services-box h3{
+    font-size: 1.5rem;
+}
+
+.service-desc{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 9.6rem;
+    transition: max-height 0.3s ease;
+}
+
+.service-desc.expanded {
+    -webkit-line-clamp: unset;
+    max-height: none;
+}
+/* /Services */
+
+/* Formulario */
+.contact{
+    background: var(--bg-color-01);
+    text-align: center;
+    padding: 2rem;
+    height: auto;
+}
+
+.contact h2{
+    color: var(--text-color-black);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact span{
+    color: var(--color-11);
+}
+
+form{
+    max-width: 45rem;
+    margin: 0.6rem auto;
+    text-align: center;
+    margin-bottom: 2rem;    
+}
+
+form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .input-box input, form textarea{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-color-black);
+    background-color: var(--text-color-white);
+    border-radius: 0.5rem;
+    margin: 0.4rem 0;
+}
+
+form textarea{
+    resize: none;
+}
+
+.contact-icon-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    margin: 70px;
+    color: var(--color-05);
+}
+
+.contact-icon-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0rem 3rem;
+    padding: 1rem;
+}
+
+.contact-icon{
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 2rem ;
+
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: 50%;
+
+}
+
+.contact-icon i{
+    font-size: 2rem;
+    color: var(--color-05);
+}
+
+.contact-info span{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.contact-info p{
+    margin: 0.25rem 0rem;
+}
+
+.contact-info a{
+    display: block;
+    margin: 0.25rem 0rem;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.contact-info a:hover{
+    transition: color .3s ease;
+    color: var(--color-11);
+}
+
+.btn-form{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: bold;
+    color: var(--text-color-black);
+    background: transparent;
+    border: 3px solid var(--color-04);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;    
+    margin-top: 30px;
+}
+
+.btn-form:hover{
+    border: 3px solid var(--color-07);
+}
+/* === Formulario === */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: var(--color-07);
+}
+
+/* === Responsividade === */
+
+@media (max-width: 768px) {
+    /* Esconde o menu em telas pequenas */
+    .nav-header {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; 
+        right: 10px; 
+        background-color: #444; 
+        border-radius: 5px; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+        padding: 1rem; 
+    }
+
+    /* Mostra o botão hambúrguer em telas menores */
+    .hamburger {
+        display: block;
+    }
+
+    /* Exibe o menu ao adicionar a classe active */
+    .nav-header.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    header .top-bar {
+        margin: 10px 0 0 10px; /* Ajusta margens para telas menores */
+    }
+    header .logo {
+        font-size: 1.5rem; /* Reduz o tamanho do logo */
+    }
+}
+
+/* Home */
+@media (max-width: 768px) {
+    .home {
+        padding: 8vw; /* Aumenta o espaçamento em telas menores */
+    }
+    
+    .home-content {
+        max-width: 95%;
+    }
+}
+
+/* About */
+@media (max-width: 1024px) {
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .about-photo img {
+        width: 200px;
+        margin: 0 20px 20px 0;
+    }
+
+    .box-about {
+        margin: 20px 0;
+    }
+
+    .box-about h2 {
+        font-size: 2.2rem;
+    }
+
+    .box-about h3 {
+        font-size: 1.4rem;
+    }
+
+    .box-about h4 {
+        text-align: center;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stacks-content {
+        margin-top: 30px;
+    }
+
+    .tech-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stacks ul li {
+        margin: 5px;
+    }
+
+    .stacks ul li img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 10px;
+    }
+
+    .about-photo img {
+        width: 150px;
+        margin: 0 0 20px 0;
+    }
+
+    .box-about h2 {
+        font-size: 1.8rem;
+    }
+
+    .box-about h3 {
+        font-size: 1.2rem;
+    }
+
+    .stacks-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .tech-list {
+        flex-direction: column;
+    }
+
+    .stacks ul li {
+        padding: 5px;
+    }
+
+    .stacks ul li img {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 10px;
+    }
+
+    .box-about h2 {
+        font-size: 1.5rem;
+    }
+
+    .box-about h3 {
+        font-size: 1.1rem;
+    }
+
+    .box-about h4 {
+        font-size: 0.9rem;
+    }
+
+    .stacks-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .stacks ul li {
+        margin: 5px 0;
+        padding: 5px;
+    }
+
+    .stacks ul li img {
+        width: 30px;
+    }
+}
+
+
+/* Project */
+@media (max-width: 1024px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr; /* 1 imagem por linha em telas muito pequenas */
+    }
+}
+
+/* services */
+@media (max-width: 1024px) {
+    .services h4 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título */
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-box {
+        min-height: 20rem; /* Reduz a altura mínima das caixas */
+        margin-bottom: 1rem;
+        max-width: 90%; /* Aumenta a largura disponível das caixas */
+    }
+
+    .services-box i {
+        font-size: 3.5rem; /* Ajusta o tamanho do ícone */
+    }
+
+    .services-box h3 {
+        font-size: 1.3rem; /* Ajusta o tamanho do subtítulo */
+    }
+}
+
+@media (max-width: 768px) {
+    .services h4 {
+        font-size: 1.6rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .services-box {
+        max-width: 100%; /* Garante que as caixas ocupem toda a largura */
+        min-height: 18rem;
+    }
+
+    .services-box i {
+        font-size: 3rem;
+    }
+
+    .services-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-desc {
+        max-height: 8rem; /* Ajusta a altura máxima do texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .services h4 {
+        font-size: 1.4rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .services-box {
+        max-width: 100%;
+        min-height: 15rem;
+    }
+
+    .services-box i {
+        font-size: 2.5rem;
+    }
+
+    .services-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-desc {
+        max-height: 7rem; /* Ajusta a altura máxima do texto */
+    }
+}
+
+/* Summary */
+@media (max-width: 768px) {
+    .work-box, .education-box, .course-box, .tech-box, .skill-box {
+        padding: 15px;
+    }
+    .box-content h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-timeline::before, .education-timeline::before, .course-timeline::before, .tech-timeline::before, .skill-timeline::before {
+        left: 5px;
+    }
+    .work-icon, .education-icon, .course-icon, .tech-icon, .skill-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .work-date h3, .education-date h3, .course-date h3, .tech-date h3, .skill-date h3 {
+        font-size: 18px;
+}}
+
+/* Formulario */
+@media (max-width: 768px) {
+    .contact h2 {
+        font-size: 1.6rem;
+    }
+
+    .form .input-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form .input-box input, .form textarea {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .contact-icon-wrapper {
+        flex-direction: column;
+        margin: 30px;
+    }
+
+    .contact-icon-content {
+        margin: 10px 0;
+    }
+
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .btn-form {
+        width: 90%;
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsividade para telas menores (ainda menores que 480px) */
+@media (max-width: 480px) {
+    .contact h2 {
+        font-size: 1.4rem;
+    }
+
+    .form .input-box input, .form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-icon-wrapper {
+        margin: 20px;
+    }
+
+    .btn-form {
+        font-size: 1rem;
+    }
+}
