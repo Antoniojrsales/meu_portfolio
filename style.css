@@ -495,6 +495,8 @@ header .logo a {
 
 .project-box img{
     width: 100%;
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    max-height: 500px; /* Ajuste a altura conforme necessário */
     transition: 0.5s ease;
     object-fit: cover; /* Ajusta a imagem ao contêiner sem distorcer */
 }
