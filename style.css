@@ -32,6 +32,7 @@
 html {
     font-family: 'Poppins', sans-serif; /* Define a fonte principal do documento */
     font-size: 16px; /* Define o tamanho base da fonte */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -82,7 +83,7 @@ header .top-bar {
     min-width: 290px; /* Largura mínima da barra */
     min-height: 66px; /* Altura mínima da barra */
     position: absolute; /* Posiciona a barra em relação ao cabeçalho */
-    margin: 20px 0 0 80px; /* Espaçamento interno da barra */
+    margin: 10px 0 0 60px; /* Espaçamento interno da barra */
     justify-content: space-between;
 }
 
@@ -141,6 +142,11 @@ header .logo a {
     color: var(--main-color); /* Cor do botão */
     cursor: pointer; /* Altera o cursor para indicar interatividade */
     margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+    transform: scale(1.1);
 }
 
 .nav-header.active {
@@ -807,9 +813,7 @@ footer{
     .nav-header.active {
         display: flex;
     }
-}
 
-@media (max-width: 768px) {
     header .top-bar {
         margin: 10px 0 0 10px; /* Ajusta margens para telas menores */
     }
