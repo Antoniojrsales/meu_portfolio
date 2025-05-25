@@ -56,12 +56,13 @@ body {
     border: 3px solid var(--color-04);
     border-radius: 20px;
     cursor: pointer;
+    transform: scale(1.2); /* Dá um efeito de crescimento */
     transition: 0.3s ease;    
     margin-top: 30px;
 }
 
 .btn:hover a{
-    border: 3px solid var(--color-07);
+    border: 3px solid var(--color-05);
 }
 /* /btn */
 
@@ -79,7 +80,7 @@ header {
 
 header .top-bar {
     display: flex; /* Exibe a barra superior como um bloco */
-    background: var(--text-color-black); /* Cor de fundo da barra superior */
+    background: #444; /* Cor de fundo da barra superior */
     min-width: 290px; /* Largura mínima da barra */
     min-height: 66px; /* Altura mínima da barra */
     position: absolute; /* Posiciona a barra em relação ao cabeçalho */
@@ -161,7 +162,8 @@ header .logo a {
 
 /* Home */
 .home{
-    background: #151515 url(img/data.jpg) no-repeat center bottom;
+    background: linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6)), 
+                url(img/data2.jpeg) no-repeat center bottom;
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
@@ -177,6 +179,8 @@ header .logo a {
 .home-content{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 90%;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .home-content h4{
@@ -190,6 +194,7 @@ header .logo a {
 .home-content h1{
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: bold;
+    color: var(--text-color-white);
 }
 
 .home-content p{
@@ -202,6 +207,7 @@ header .logo a {
     font-size: 1.5rem;
     color: var(--bg-color-01);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
 }
 
 .home .btn a{
@@ -224,8 +230,10 @@ header .logo a {
 
 .home .social-media i:hover{
     background-color: inherit;
-    color: var(--color-07);
+    color: var(--color-05);
     cursor: pointer;
+    transform: scale(1.2); /* Dá um efeito de crescimento */
+    transition: transform 0.3s ease-in-out;
 }
 /* /Home */
 
