@@ -56,13 +56,13 @@ body {
     border: 3px solid var(--color-04);
     border-radius: 20px;
     cursor: pointer;
-    transform: scale(1.2); /* Dá um efeito de crescimento */
-    transition: 0.3s ease;    
     margin-top: 30px;
 }
 
 .btn:hover a{
     border: 3px solid var(--color-05);
+    transform: scale(1.1); /* Dá um efeito de crescimento */
+    transition: transform 0.3s ease;  
 }
 /* /btn */
 
@@ -254,8 +254,9 @@ header .logo a {
 
 .about-photo img{
     width: 250px;
-    border-radius: 50%;
+    border-radius: 60%;
     margin: 0px 20px 300px 150px;
+    display: block; /* Evita espaçamento extra */
 }
 
 .box-about{
@@ -274,9 +275,11 @@ header .logo a {
     color: var(--color-11);
 }
 
-.box-about h4{
-    margin-top: 1.5rem;
+.box-about p{
+    font-size: 1rem;
+    line-height: 1.6; /* Espaçamento entre linhas */
     text-align: justify;
+    margin-top: 1.5rem;
 }
 
 .box-about h4 a{
@@ -320,7 +323,7 @@ header .logo a {
 }
 
 .stacks ul li img{
-    width: 60px;
+    width: 90px;
     height: auto;
     transition: transform .3s ease;
 }
