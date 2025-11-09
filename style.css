@@ -516,6 +516,7 @@ header .logo a {
     max-height: 500px; /* Ajuste a altura conforme necessário */
     transition: 0.5s ease;
     object-fit: cover; /* Ajusta a imagem ao contêiner sem distorcer */
+    filter: sharpen(0.5px);
 }
 
 .project-box img:hover{
@@ -528,7 +529,7 @@ header .logo a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(129, 140, 248, 0.7);
+    background: rgba(30, 58, 138, 0.8);
 
     display: flex;
     flex-direction: column;
@@ -549,8 +550,8 @@ header .logo a {
 
 .project-layer h4{
     font-size: 1.8rem;
-    margin-top: 7rem;
-    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-white);
 }
 
 .project-layer a{
@@ -566,17 +567,17 @@ header .logo a {
 }
 
 .project-layer p{
-    /* margin: 0.2rem 0 0 0.5rem; */
+    color: var(--text-color-white);
     margin-top: 30px;
 }
 
 .project-layer a i{
-    color: var(--color-10);
+    color: var(--text-color-white);
     
 }
 
 .project-layer a span{
-    color: var(--text-color-black);
+    color: var(--text-color-white);
     margin-top: .4rem;
 }
 /* /Portfolio */
