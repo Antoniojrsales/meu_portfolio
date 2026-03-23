@@ -610,7 +610,8 @@ header .logo a {
     position: relative;
     border-radius: 2rem; /* Mantendo o padrão do seu design */
     overflow: hidden;
-    height: 260px;
+    width: auto;
+    height: 310px;
     cursor: pointer;
 
     /* força otimização */
@@ -1130,6 +1131,19 @@ footer{
 
 @media (max-width: 768px) {
     .project-container {
+        grid-template-columns: 1fr; /* 1 imagem por linha em telas muito pequenas */
+    }
+}
+
+/* Executable */
+@media (max-width: 1024px) {
+    .executable-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .executable-container {
         grid-template-columns: 1fr; /* 1 imagem por linha em telas muito pequenas */
     }
 }
