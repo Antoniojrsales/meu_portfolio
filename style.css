@@ -80,7 +80,6 @@ header {
 
 header .top-bar {
     display: flex; /* Exibe a barra superior como um bloco */
-    background: #444; /* Cor de fundo da barra superior */
     min-width: 290px; /* Largura mínima da barra */
     min-height: 66px; /* Altura mínima da barra */
     position: absolute; /* Posiciona a barra em relação ao cabeçalho */
@@ -162,14 +161,16 @@ header .logo a {
 
 /* Home */
 .home{
-    background: linear-gradient(rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6)), 
-                url(img/data2.jpeg) no-repeat center bottom;
+    background: linear-gradient(rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.8)), 
+                url(img/code_python1.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -179,8 +180,8 @@ header .logo a {
 .home-content{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 90%;
-    padding: 2rem;
-    margin-bottom: 2rem;
+    padding: 3rem;
+    margin-bottom: 3rem;
 }
 
 .home-content h4{
@@ -189,12 +190,14 @@ header .logo a {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     letter-spacing: 5px;
     text-transform: uppercase; /* Deixa o texto em maiúsculas (opcional) */
+    margin-bottom: 1rem;
 }
 
 .home-content h1{
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: bold;
     color: var(--text-color-white);
+    margin-bottom: 1rem;
 }
 
 .home-content p{
@@ -294,6 +297,8 @@ header .logo a {
 
 .section-subtitle .btn a{
     display: inline-block;
+    padding: 10px 20px;
+    font-size: clamp(1.2rem, 2.5vw, 1.3rem);
 }
 
 .stacks-content{
@@ -376,7 +381,7 @@ header .logo a {
 
 /* summary */
 .summary {
-    padding: 40px 0;
+    padding: 40px;
     background: #f9f9f9;
     color: var(--text-color-black);
 }
@@ -596,121 +601,65 @@ header .logo a {
     margin-bottom: 3rem;
 }
 
-.executable h2 span{
-    color: var(--color-10);
-}
-
 .executable-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1.2rem;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.executable-box{
-    position: relative;
-    border-radius: 2rem; /* Mantendo o padrão do seu design */
+.project-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
     overflow: hidden;
-    width: auto;
-    height: 310px;
-    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
 
-    /* força otimização */
-    transform: translateZ(0);
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Força o vídeo a manter a proporção 16:9 perfeita sem cortar nada */
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
 }
 
 .project-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Isso aqui é o segredo para o vídeo não esticar */
-    /* remove animação pesada */
-    transition: opacity .4s ease;
-    will-change: opacity;
+    object-fit: contain; /* Garante que o vídeo seja redimensionado para caber dentro do contêiner sem cortar */
 }
 
-.executable-box:hover .project-video {
-    opacity: 0.85;
-}
-
-.executable-layer {
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        to top,
-        rgba(15, 23, 42, 0.95),
-        rgba(15, 23, 42, 0.6)
-    );
-
+.project-info-row {
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    padding: 2rem;
-    color: white;
-
-    opacity: 0;
-    transform: translateY(40px);
-    transition: transform .45s ease, opacity .45s ease;
-
-    will-change: transform, opacity;
+    gap: 1rem;
 }
 
-.executable-box:hover .executable-layer {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.executable, .executable:hover{
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.executable-layer h4{
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-}
-
-.executable-layer a{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    background: var(--text-color-white);
-    text-decoration: none;
-
-    transition: transform .3s ease;
-}
-
-.executable-layer a:hover {
-    transform: scale(1.1);
-}
-
-.executable-layer p{
-    font-size: .95rem;
-    margin: 1rem 0;
-}
-
-.executable-layer a i{
-    color: var(--main-color);
+.project-info-row h3 {
     font-size: 1.2rem;
+    color: #1a202c;
+    font-weight: 600;
 }
 
-.executable-layer a span{
-    color: var(--main-color);
-    margin-top: .4rem;
-    font-size: .75rem;
+.project-actions {
+    display: flex;
+    gap: 1rem;
 }
 
 .project-btn {
     display: inline-flex;
     align-items: center;
     
-    padding: .75rem 1.6rem;
-    border-radius: 10px;
+    padding: .6rem 1.2rem;
+    gap: .5rem;
+    border-radius: 8px;
 
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(6px);
@@ -718,7 +667,7 @@ header .logo a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: .95rem;
+    font-size: .9rem;
 
     border: 1px solid rgba(255,255,255,0.2);
 
@@ -727,7 +676,7 @@ header .logo a {
 
 /* Ícone */
 .project-btn i {
-    font-size: .95rem;
+    font-size: 1rem;
 }
 
 /* Hover bonito */
@@ -777,22 +726,19 @@ header .logo a {
     gap: 1rem;
 }
 
-.services-container, .services-box{
+.services-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 28rem;
+    margin-bottom: 1rem;
+    width: 100%;
     padding: 2rem 1rem 2.5rem;
     border-radius: 1.2rem;
     text-align: center;
     border: solid 0.15rem var(--color-00);
     background-color: var(--bg-color-02);
     transition: 0.5s ease;
-}
-
-.services-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 25rem;
-    margin-bottom: 1rem;
-    width: 100%; /* Garante que as caixas ocupem toda a largura disponível */
 }
 
 .services-container, .services-box:hover{
@@ -811,16 +757,35 @@ header .logo a {
 
 .service-desc{
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    max-height: 9.6rem;
+    max-height: 12rem;
     transition: max-height 0.3s ease;
 }
 
 .service-desc.expanded {
     -webkit-line-clamp: unset;
     max-height: none;
+}
+
+.btn-saiba-mais {
+    background: transparent;
+    border: 1px solid var(--color-10);
+    color: var(--color-10);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    align-self: center;
+    transition: all 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+    background: var(--color-10);
+    color: white;
 }
 /* /Services */
 
@@ -954,7 +919,7 @@ footer{
     justify-content: center;
     align-items: center;
     padding: 1.2rem;
-    background-color: var(--color-07);
+    background-color: var(--bg-color-01);
 }
 
 /* === Responsividade === */
@@ -1136,17 +1101,16 @@ footer{
 }
 
 /* Executable */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .executable-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha em telas menores */
+        grid-template-columns: 1fr; /* 2 imagens por linha em telas menores */
+        gap: 2rem; /* Reduz o espaçamento entre os itens */
+    }
+    project-title {
+        font-size: 1.1rem; /* Ajusta o tamanho do título do projeto */
     }
 }
 
-@media (max-width: 768px) {
-    .executable-container {
-        grid-template-columns: 1fr; /* 1 imagem por linha em telas muito pequenas */
-    }
-}
 
 /* services */
 @media (max-width: 1024px) {
