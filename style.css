@@ -316,7 +316,9 @@ header .logo a {
 .tech-list{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     flex-direction: row;
+    gap: 2rem;
 }
 
 .stacks ul li{
@@ -328,8 +330,8 @@ header .logo a {
 }
 
 .stacks ul li img{
-    width: 90px;
-    height: auto;
+    width: auto;
+    height: 55px;
     transition: transform .3s ease;
 }
 
@@ -924,8 +926,8 @@ footer{
 
 /* === Responsividade === */
 
+/* Home - Navbar */
 @media (max-width: 768px) {
-    /* Esconde o menu em telas pequenas */
     .nav-header {
         display: none; 
         flex-direction: column; 
@@ -935,35 +937,44 @@ footer{
         background-color: #444; 
         border-radius: 5px; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
-        padding: 1rem; 
+        padding: 1rem;
+        z-index: 1000; /* Garante que o menu fique acima de tudo */
     }
 
-    /* Mostra o botão hambúrguer em telas menores */
     .hamburger {
         display: block;
     }
 
-    /* Exibe o menu ao adicionar a classe active */
     .nav-header.active {
         display: flex;
     }
 
     header .top-bar {
-        margin: 10px 0 0 10px; /* Ajusta margens para telas menores */
+        margin: 10px 0 0 10px;
     }
-    header .logo {
-        font-size: 1.5rem; /* Reduz o tamanho do logo */
-    }
-}
 
-/* Home */
-@media (max-width: 768px) {
+    header .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Home */
     .home {
-        padding: 8vw; /* Aumenta o espaçamento em telas menores */
+        padding: 6vw;
+        min-height: 100svh; /* Evita corte dos ícones pela barra do navegador mobile */
     }
     
     .home-content {
-        max-width: 95%;
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 2.2rem; /* Ajuste conforme o seu tamanho atual */
+    }
+
+    .home-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-wrap: balance; /* Quebra a headline de forma simétrica */
     }
 }
 
